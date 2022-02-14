@@ -1,0 +1,48 @@
+body {
+    font-family: "satisfy";
+    background:linear-gradient(to bottom, #363982, #D1CC7D);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container {
+    background-color: whitesmoke;
+    color: #363982;
+    text-shadow: #D1CC7D 2px 1px 5px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1rem;
+    text-align: justify;
+    padding: 1rem;
+   
+    margin: 5rem;
+    border-style: dashed;
+    border-color: blue;
+    border-width: 5px;
+    height: 22rem;
+}
+h1{
+    font-size: 2rem;
+    padding: 10px;
+    margin: 1rem;
+    text-align: center;
+}
+h2 {
+    font-size: 1rem;
+    padding: 10px;
+    margin: 1rem;
+    text-align: center;
+}    
+
+button {
+display: grid;
+padding: 1rem;
+margin: auto;
+background-color: #303282;
+color: #D0C57E;
+border-radius: 15px;
+}
