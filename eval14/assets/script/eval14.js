@@ -11,20 +11,24 @@ let resetButton;
 
 function verifierReponse() {
     // const userGuess = Number(champReponse.value);
-    const userGuess = champReponse.value;
+    let userGuess = champReponse.value;
     if (compteurEssai === 1) {
         devine.textContent = 'Réponse précédente: ';
     }
 
     devine.textContent += userGuess + ' ';
-    if(userGuess < 0 || userGuess > 1000 || isNaN(userGuess) ){
+    console.log(userGuess);
+    if(userGuess < 0 || userGuess > 1000 || isNaN(userGuess) ||userGuess === "" ){ //J'ai ajouté si le champ est vide
         console.log("erreur");
         dernierResultat.textContent = 'arrête de boire!';
 
     }else{
         if (userGuess == randomNumber) {
+
             dernierResultat.textContent = 'Bien joué tu as trouvé le zombie!';
+
             dernierResultat.style.backgroundColor = 'green';
+
             plusOuMoins.textContent = '';
             setGameOver();
         } else if (compteurEssai === 10) {
@@ -33,7 +37,9 @@ function verifierReponse() {
             setGameOver();
         } else {
             dernierResultat.textContent = 'Tu as tué un civil!';
-            dernierResultat.style.backgroundColor = 'red';
+
+            dernierResultat.style.backgroundColor = 'red'; //ici tu a la posibilité de mettre une class plutôt que d'ajouter du style direct
+
             if (userGuess < randomNumber) {
                 plusOuMoins.textContent = 'Essaie plus haut!';
             } else if (userGuess > randomNumber) {
@@ -74,11 +80,11 @@ function resetGame() {
     champReponse.disabled = false;
     soumettreReponse.disabled = false;
     champReponse.value = '';
-    champReponse.focus();
+    champReponse.focus(); //à quoi cela sert ? 
 
     dernierResultat.style.backgroundColor = 'white';
 
-    randomNumber = Math.floor(Math.random() * 100) + 1;
+    randomNumber = Math.floor(Math.random() * 100) + 1; //Pourquoi mettre +1 j'attend une réponse à cette question
 
 
     //   function nanfromage() {
